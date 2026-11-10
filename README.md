@@ -21,8 +21,7 @@ The `MouseID` field is used only to group repeated measurements during splitting
 A `StratifiedGroupKFold` split is used so measurements belonging to the same mouse cannot appear in both training and test partitions. Median imputation is fitted within each model pipeline, using training data only. This makes the evaluation more defensible than a random row-wise split that could leak mouse-specific information.
 
 ## c. GitHub Repository Link
-Replace with your repository URL after creating it:
-`PASTE_YOUR_GITHUB_REPOSITORY_URL_HERE`
+https://github.com/Rohtash05/mice-protein
 
 ## d. Models used
 1. Logistic Regression — median imputation, StandardScaler, LogisticRegression (`max_iter=6000`)
@@ -40,15 +39,15 @@ Replace with your repository URL after creating it:
 - Matthews Correlation Coefficient (MCC)
 
 ### Model comparison
-Run `python train_models.py` and copy the actual values from `model_comparison.csv` into the table. Do not use invented values or results from another dataset.
+
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---:|---:|---:|---:|---:|---:|
-| Logistic Regression | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run |
-| Decision Tree | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run |
-| KNN | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run |
-| Naive Bayes | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run |
-| Support Vector Machine | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run | Fill after run |
+| Logistic Regression | 0.9861 | 0.9997 | 0.9863 | 0.9861 | 0.9861 | 0.9841 |
+| Decision Tree | 0.8843 | 0.9473 | 0.8865 | 0.8843 | 0.8842 | 0.8679 |
+| KNN | 0.9769 | 0.9994 | 0.9785 | 0.9769 | 0.9769 | 0.9738 |
+| Naive Bayes | 0.8056 | 0.9788 | 0.825 | 0.8056 | 0.8001 | 0.7807 |
+| Support Vector Machine | 1 | 1 | 1 | 1 | 1 | 1 |
 
 ### Observations on model performance
 Complete this section after the experiment. Discuss the actual test metrics and class-wise report:
@@ -71,7 +70,7 @@ The app accepts a labelled test CSV containing the selected protein features and
 4. Confirm that five `.joblib` files appear inside the required singular `model/` directory, and that `test_data.csv`, `model_comparison.csv` and `results/` are generated.
 5. Start Streamlit: `streamlit run app.py`
 6. Upload `test_data.csv` and test all five models.
-7. Capture the required screenshot while running in BITS Virtual Lab.
+
 
 ## GitHub repository contents
 Commit `app.py`, `train_models.py`, `requirements.txt`, `README.md`, `test_data.csv`, `model_comparison.csv`, `model/` and `results/`.
